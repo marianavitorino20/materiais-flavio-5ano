@@ -22,7 +22,8 @@ const MATERIAIS = {
       "desc": ""
     }
   ],
-  "planos": [
+  "atividades": [],
+  "planos_mat": [
     {
       "titulo": "Direção e sentido",
       "url": "materiais/planos_de_aula/direcao_e_sentido.html",
@@ -148,7 +149,9 @@ const MATERIAIS = {
         "1º Trimestre"
       ],
       "desc": ""
-    },
+    }
+  ],
+  "planos_mat_dadas": [
     {
       "titulo": "Sistema monetário brasileiro",
       "url": "materiais/planos_de_aula/sistema_monetario_brasileiro.html",
@@ -301,7 +304,9 @@ const MATERIAIS = {
         "1º Trimestre"
       ],
       "desc": ""
-    },
+    }
+  ],
+  "planos_cie": [
     {
       "titulo": "Condutibilidade térmica e elétrica",
       "url": "materiais/planos_de_aula/condutibilidade_termica_e_eletrica.html",
@@ -373,7 +378,9 @@ const MATERIAIS = {
         "1º Trimestre"
       ],
       "desc": ""
-    },
+    }
+  ],
+  "planos_cie_dadas": [
     {
       "titulo": "Densidade e solubilidade",
       "url": "materiais/planos_de_aula/densidade_e_solubilidade.html",
@@ -383,6 +390,5 @@ const MATERIAIS = {
       ],
       "desc": ""
     }
-  ],
-  "atividades": []
+  ]
 };
