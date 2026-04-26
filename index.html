@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Materiais — Pro Mariana | EMEB Flávio D'Angieri</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=202604261941">
 </head>
 <body>
   <header>
@@ -22,7 +22,6 @@
         <li><a href="#listas">📋 Listas</a></li>
         <li><a href="#planos">📖 Planos de Aula</a></li>
         <li><a href="#atividades">🎲 Atividades Lúdicas</a></li>
-        <li><a href="#documentos">📁 Documentos</a></li>
       </ul>
     </nav>
   </header>
@@ -71,22 +70,13 @@
       </div>
       <div class="grid" id="grid-atividades"><div class="vazio">Nenhuma atividade gerada ainda.</div></div>
     </section>
-
-    <section class="secao" id="documentos">
-      <div class="secao-header">
-        <div class="icone" style="background:#f0eafd">📁</div>
-        <h2>Documentos</h2>
-        <span class="contador" id="cnt-documentos">0 materiais</span>
-      </div>
-      <div class="grid" id="grid-documentos"><div class="vazio">Nenhum documento ainda.</div></div>
-    </section>
   </main>
 
   <footer>
     <p>Gerado automaticamente pela Assistente da Pro Mariana · EMEB Professor Flávio D'Angieri · Jundiaí, SP</p>
   </footer>
 
-  <script src="assets/materiais.js"></script>
+  <script src="assets/materiais.js?v=202604261941"></script>
   <script>
     function renderSecao(dados, gridId, cntId) {
       const grid = document.getElementById(gridId);
@@ -98,22 +88,20 @@
       dados.forEach(m => {
         const tags = (m.tags || []).map(t => {
           const cls = t.match(/Trimestre/) ? 'tag-trimestre' : t.startsWith('Bloom') ? 'tag-bloom' : 'tag-data';
-          return `<span class="tag ${cls}">${t}</span>`;
+          return '<span class="tag ' + cls + '">' + t + '</span>';
         }).join('');
-        grid.innerHTML += `
-          <a class="card" href="${m.url}">
-            <div class="card-titulo">${m.titulo}</div>
-            <div class="card-meta">${tags}</div>
-            ${m.desc ? `<div class="card-desc">${m.desc.substring(0,100)}${m.desc.length>100?'…':''}</div>` : ''}
-          </a>`;
+        grid.innerHTML += '<a class="card" href="' + m.url + '">' +
+          '<div class="card-titulo">' + m.titulo + '</div>' +
+          '<div class="card-meta">' + tags + '</div>' +
+          (m.desc ? '<div class="card-desc">' + m.desc.substring(0,100) + (m.desc.length>100?'…':'') + '</div>' : '') +
+          '</a>';
       });
     }
     if (typeof MATERIAIS !== 'undefined') {
-      renderSecao(MATERIAIS.provas,      'grid-provas',      'cnt-provas');
-      renderSecao(MATERIAIS.listas,      'grid-listas',      'cnt-listas');
-      renderSecao(MATERIAIS.planos,      'grid-planos',      'cnt-planos');
-      renderSecao(MATERIAIS.atividades,  'grid-atividades',  'cnt-atividades');
-      renderSecao(MATERIAIS.documentos,  'grid-documentos',  'cnt-documentos');
+      renderSecao(MATERIAIS.provas,     'grid-provas',     'cnt-provas');
+      renderSecao(MATERIAIS.listas,     'grid-listas',     'cnt-listas');
+      renderSecao(MATERIAIS.planos,     'grid-planos',     'cnt-planos');
+      renderSecao(MATERIAIS.atividades, 'grid-atividades', 'cnt-atividades');
     }
   </script>
 </body>

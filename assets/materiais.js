@@ -384,34 +384,5 @@ const MATERIAIS = {
       "desc": ""
     }
   ],
-  "atividades": [],
-  "documentos": [
-    {
-      "titulo": "Diagnóstico de Lacunas em Matemática 2026",
-      "url": "materiais/documentos/diagnostico_de_lacunas_em_matematica_2026.html",
-      "data": "2026-04-26",
-      "tags": [
-        "1º Trimestre"
-      ],
-      "desc": ""
-    },
-    {
-      "titulo": "Guia de Inclusão — Alunos com NEE",
-      "url": "materiais/documentos/guia_de_inclusao_alunos_com_nee_2026.html",
-      "data": "2026-04-26",
-      "tags": [
-        "1º Trimestre"
-      ],
-      "desc": ""
-    },
-    {
-      "titulo": "Perfil da Turma 2026",
-      "url": "materiais/documentos/perfil_da_turma_2026.html",
-      "data": "2026-04-26",
-      "tags": [
-        "2026"
-      ],
-      "desc": ""
-    }
-  ]
+  "atividades": []
 };
