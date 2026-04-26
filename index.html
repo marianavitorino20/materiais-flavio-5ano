@@ -22,6 +22,7 @@
         <li><a href="#listas">📋 Listas</a></li>
         <li><a href="#planos">📖 Planos de Aula</a></li>
         <li><a href="#atividades">🎲 Atividades Lúdicas</a></li>
+        <li><a href="#documentos">📁 Documentos</a></li>
       </ul>
     </nav>
   </header>
@@ -31,56 +32,53 @@
       <div class="hero-icon">🎓</div>
       <div>
         <h2>Bem-vinda, Pro Mariana!</h2>
-        <p>Aqui ficam todos os materiais de Matemática do 5º ano, organizados por tipo. Clique em qualquer material para visualizar, e use <strong>Ctrl+P</strong> (ou ⌘+P) para imprimir diretamente do navegador.</p>
+        <p>Todos os materiais de Matemática do 5º ano, organizados por tipo. Clique para visualizar e use <strong>Ctrl+P</strong> para imprimir direto do navegador.</p>
       </div>
     </div>
 
-    <!-- PROVAS -->
     <section class="secao" id="provas">
       <div class="secao-header">
         <div class="icone icone-provas">📝</div>
         <h2>Provas</h2>
         <span class="contador" id="cnt-provas">0 materiais</span>
       </div>
-      <div class="grid" id="grid-provas">
-        <div class="vazio">Nenhuma prova gerada ainda.</div>
-      </div>
+      <div class="grid" id="grid-provas"><div class="vazio">Nenhuma prova gerada ainda.</div></div>
     </section>
 
-    <!-- LISTAS -->
     <section class="secao" id="listas">
       <div class="secao-header">
         <div class="icone icone-listas">📋</div>
         <h2>Listas de Exercícios</h2>
         <span class="contador" id="cnt-listas">0 materiais</span>
       </div>
-      <div class="grid" id="grid-listas">
-        <div class="vazio">Nenhuma lista gerada ainda.</div>
-      </div>
+      <div class="grid" id="grid-listas"><div class="vazio">Nenhuma lista gerada ainda.</div></div>
     </section>
 
-    <!-- PLANOS -->
     <section class="secao" id="planos">
       <div class="secao-header">
         <div class="icone icone-planos">📖</div>
         <h2>Planos de Aula</h2>
         <span class="contador" id="cnt-planos">0 materiais</span>
       </div>
-      <div class="grid" id="grid-planos">
-        <div class="vazio">Nenhum plano de aula gerado ainda.</div>
-      </div>
+      <div class="grid" id="grid-planos"><div class="vazio">Nenhum plano gerado ainda.</div></div>
     </section>
 
-    <!-- ATIVIDADES -->
     <section class="secao" id="atividades">
       <div class="secao-header">
         <div class="icone icone-atividades">🎲</div>
         <h2>Atividades Lúdicas</h2>
         <span class="contador" id="cnt-atividades">0 materiais</span>
       </div>
-      <div class="grid" id="grid-atividades">
-        <div class="vazio">Nenhuma atividade lúdica gerada ainda.</div>
+      <div class="grid" id="grid-atividades"><div class="vazio">Nenhuma atividade gerada ainda.</div></div>
+    </section>
+
+    <section class="secao" id="documentos">
+      <div class="secao-header">
+        <div class="icone" style="background:#f0eafd">📁</div>
+        <h2>Documentos</h2>
+        <span class="contador" id="cnt-documentos">0 materiais</span>
       </div>
+      <div class="grid" id="grid-documentos"><div class="vazio">Nenhum documento ainda.</div></div>
     </section>
   </main>
 
@@ -88,27 +86,25 @@
     <p>Gerado automaticamente pela Assistente da Pro Mariana · EMEB Professor Flávio D'Angieri · Jundiaí, SP</p>
   </footer>
 
-  <!-- Índice de materiais — atualizado automaticamente -->
   <script src="assets/materiais.js"></script>
   <script>
-    // Renderiza os cards a partir do catálogo
     function renderSecao(dados, gridId, cntId) {
       const grid = document.getElementById(gridId);
       const cnt  = document.getElementById(cntId);
       if (!dados || dados.length === 0) return;
       grid.innerHTML = '';
       cnt.textContent = dados.length + ' material' + (dados.length !== 1 ? 'is' : '');
-      dados.sort((a, b) => b.data.localeCompare(a.data));
+      dados.sort((a, b) => (a.titulo || '').localeCompare(b.titulo || '', 'pt'));
       dados.forEach(m => {
         const tags = (m.tags || []).map(t => {
-          const cls = t.startsWith('T') ? 'tag-trimestre' : t.startsWith('Bloom') ? 'tag-bloom' : 'tag-data';
+          const cls = t.match(/Trimestre/) ? 'tag-trimestre' : t.startsWith('Bloom') ? 'tag-bloom' : 'tag-data';
           return `<span class="tag ${cls}">${t}</span>`;
         }).join('');
         grid.innerHTML += `
           <a class="card" href="${m.url}">
             <div class="card-titulo">${m.titulo}</div>
             <div class="card-meta">${tags}</div>
-            ${m.desc ? `<div class="card-desc">${m.desc}</div>` : ''}
+            ${m.desc ? `<div class="card-desc">${m.desc.substring(0,100)}${m.desc.length>100?'…':''}</div>` : ''}
           </a>`;
       });
     }
@@ -117,6 +113,7 @@
       renderSecao(MATERIAIS.listas,      'grid-listas',      'cnt-listas');
       renderSecao(MATERIAIS.planos,      'grid-planos',      'cnt-planos');
       renderSecao(MATERIAIS.atividades,  'grid-atividades',  'cnt-atividades');
+      renderSecao(MATERIAIS.documentos,  'grid-documentos',  'cnt-documentos');
     }
   </script>
 </body>
