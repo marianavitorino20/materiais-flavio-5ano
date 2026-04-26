@@ -1,0 +1,25 @@
+# Token e credenciais
+.git-token
+.env
+*.token
+
+# Arquivos binários grandes (não precisam estar no site)
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.xls
+*.zip
+*.rar
+
+# Pastas que ficam só no computador local
+livros/
+alunos/
+referencias/
+Assistente da Pro Mari/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITULO}} — Pro Mariana</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body class="material-page">
+  <header>
+    <div class="header-inner">
+      <div class="header-logo">📚</div>
+      <div class="header-text">
+        <h1>Materiais da Pro Mariana</h1>
+        <p>EMEB Professor Flávio D'Angieri · Matemática · 5º Ano · 2026</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">🏠 Início</a></li>
+        <li><a href="../../index.html#provas">📝 Provas</a></li>
+        <li><a href="../../index.html#listas">📋 Listas</a></li>
+        <li><a href="../../index.html#planos">📖 Planos de Aula</a></li>
+        <li><a href="../../index.html#atividades">🎲 Atividades Lúdicas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <a class="btn-voltar" href="../../index.html">← Voltar ao índice</a>
+
+    <div class="material-topo">
+      <div class="breadcrumb">
+        <a href="../../index.html">Início</a> › <a href="../../index.html#{{CATEGORIA_ID}}">{{CATEGORIA_NOME}}</a> › {{TITULO}}
+      </div>
+      <h1 class="material-titulo">{{TITULO}}</h1>
+      <div class="material-meta-grid">
+        <div class="meta-item">
+          <div class="rotulo">Unidade Temática</div>
+          <div class="valor">{{UNIDADE_TEMATICA}}</div>
+        </div>
+        <div class="meta-item">
+          <div class="rotulo">Habilidade</div>
+          <div class="valor">{{HABILIDADE_CODIGO}} — {{HABILIDADE_DESC}}</div>
+        </div>
+        <div class="meta-item">
+          <div class="rotulo">Trimestre</div>
+          <div class="valor">{{TRIMESTRE}}</div>
+        </div>
+        <div class="meta-item">
+          <div class="rotulo">Bloom</div>
+          <div class="valor">{{BLOOM}}</div>
+        </div>
+        <div class="meta-item">
+          <div class="rotulo">Data</div>
+          <div class="valor">{{DATA}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-corpo">
+      {{CONTEUDO}}
+
+      <div class="gabarito-box">
+        <h3>Gabarito</h3>
+        {{GABARITO}}
+      </div>
+
+      <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Gerado automaticamente pela Assistente da Pro Mariana · EMEB Professor Flávio D'Angieri · Jundiaí, SP</p>
+  </footer>
+</body>
+</html>
