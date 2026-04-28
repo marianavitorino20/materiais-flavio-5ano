@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Guia de Estudos — Avaliação Trimestral de Matemática — Pro Mariana</title>
+  <style>
+    :root {
+      --azul: #1a4480; --azul-claro: #2e6dba; --verde: #2d7a4f;
+      --cinza-bg: #f4f6f9; --cinza-borda: #dde2ea; --texto: #1c2333; --texto-sub: #5a6478;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--cinza-bg); color: var(--texto); line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1a4480, #2e6dba); color: #fff; padding: 20px 32px; }
+    header h1 { font-size: 1.3rem; }
+    header p  { font-size: .85rem; opacity: .85; }
+    main { max-width: 860px; margin: 32px auto; padding: 0 24px; }
+    .btn-voltar { display:inline-block; color:#2e6dba; text-decoration:none; font-size:.88rem; margin-bottom:20px; }
+
+    .material-topo { background:#fff; border-radius:10px; padding:28px 32px; box-shadow:0 2px 10px rgba(0,0,0,.08); margin-bottom:24px; }
+    .breadcrumb { font-size:.82rem; color:#5a6478; margin-bottom:10px; }
+    .material-titulo { font-size:1.6rem; font-weight:700; color:#1a4480; margin-bottom:16px; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+    .meta-item { background:#f4f6f9; border-radius:8px; padding:10px 14px; }
+    .meta-item .rotulo { font-size:.72rem; text-transform:uppercase; letter-spacing:.5px; color:#5a6478; font-weight:600; margin-bottom:3px; }
+    .meta-item .valor  { font-size:.9rem; font-weight:500; }
+
+    .guia-intro { background:linear-gradient(135deg,#1a4480,#2e6dba); color:#fff; border-radius:12px; padding:24px 28px; margin-bottom:28px; display:flex; align-items:center; gap:16px; }
+    .guia-intro .emoji { font-size:2.5rem; flex-shrink:0; }
+    .guia-intro h2 { font-size:1.2rem; margin-bottom:6px; }
+    .guia-intro p  { opacity:.9; font-size:.9rem; }
+
+    .tema { background:#fff; border-radius:12px; margin-bottom:24px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.07); }
+    .tema-header { padding:14px 22px; display:flex; align-items:center; gap:10px; }
+    .tema-header .icone { font-size:1.4rem; }
+    .tema-header h3 { font-size:1rem; font-weight:700; margin:0; }
+    .tema-header .qs { margin-left:auto; font-size:.75rem; color:#5a6478; font-weight:500; }
+    .h-azul  { background:#e8f4fd; border-top:4px solid #2e6dba; }
+    .h-laranja{ background:#fdeee8; border-top:4px solid #d4601a; }
+    .h-verde { background:#e8fdf0; border-top:4px solid #2d7a4f; }
+    .h-amarelo{ background:#fdf6e8; border-top:4px solid #c08000; }
+    .h-roxo  { background:#f4e8fd; border-top:4px solid #7a2d9a; }
+
+    .tema-body { padding:0 22px 22px; }
+    .subtema { margin-top:18px; padding-top:14px; border-top:1px solid #eee; }
+    .subtema:first-child { border-top:none; margin-top:6px; padding-top:0; }
+    .subtema h4 { font-size:.92rem; font-weight:700; color:#1c2333; margin-bottom:7px; }
+    .subtema p  { font-size:.88rem; color:#3a4455; line-height:1.7; margin-bottom:7px; }
+
+    .exemplo { background:#f4f6f9; border-left:4px solid #2e6dba; border-radius:0 8px 8px 0; padding:11px 15px; margin:9px 0; font-size:.86rem; }
+    .exemplo strong { color:#1a4480; display:block; margin-bottom:4px; font-size:.77rem; text-transform:uppercase; letter-spacing:.4px; }
+    .resposta { color:#2d7a4f; font-weight:600; margin-top:6px; }
+
+    .dica { background:#fff8ed; border:1px solid #f0d49a; border-radius:8px; padding:9px 13px; font-size:.83rem; color:#5a4000; margin-top:9px; display:flex; gap:7px; }
+    .formula { background:#edf7ff; border:1px dashed #7ab8f5; border-radius:8px; padding:9px 15px; font-size:.9rem; font-weight:600; color:#1a4480; text-align:center; margin:9px 0; }
+
+    table.tab { width:100%; border-collapse:collapse; font-size:.84rem; margin-top:7px; }
+    table.tab th { background:#eaf3ff; padding:6px 9px; border:1px solid #b0d0f5; text-align:center; }
+    table.tab td { padding:6px 9px; border:1px solid #dde2ea; text-align:center; }
+    table.tab tr:nth-child(even) td { background:#f8fafc; }
+
+    .gabarito-box { background:#edfaf3; border:1px solid #a3dfc0; border-radius:10px; padding:20px 24px; margin-top:28px; }
+    .gabarito-box h3 { color:#1a5e37; font-size:1rem; margin-bottom:14px; }
+    .gab-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(88px,1fr)); gap:7px; }
+    .gab-item { background:#fff; border:1px solid #a3dfc0; border-radius:6px; padding:6px 10px; font-size:.8rem; text-align:center; }
+    .gab-item span { display:block; font-weight:700; color:#1a5e37; }
+
+    .btn-imprimir { display:inline-block; margin-top:20px; padding:10px 22px; background:#1a4480; color:#fff; border-radius:6px; font-size:.9rem; font-weight:500; cursor:pointer; border:none; }
+    footer { max-width:860px; margin:32px auto 20px; padding:0 24px; text-align:center; color:#5a6478; font-size:.8rem; }
+
+    /* Cabeçalho escolar — só na impressão */
+    .cab-print { display:none; }
+    @media print {
+      header, nav, .btn-voltar, .btn-imprimir, footer { display:none !important; }
+      body { background:#fff; }
+      .tema { box-shadow:none; border:1px solid #ccc; break-inside:avoid; }
+      .cab-print { display:grid !important; grid-template-columns:1fr 2fr; border:2px solid #1a4480; border-radius:6px; margin-bottom:20px; font-size:9pt; }
+      .cab-escola { padding:10px 14px; border-right:1px solid #1a4480; }
+      .cab-escola strong { font-size:10pt; display:block; }
+      .cab-campos { padding:8px 14px; }
+      .cab-campos .c { border-bottom:1px solid #aaa; padding:4px 0; margin-bottom:4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cab-print">
+    <div class="cab-escola">
+      <strong>EMEB PROF. FLÁVIO D'ANGIERI</strong>
+      <span>Jundiaí — SP · 2026</span>
+    </div>
+    <div class="cab-campos">
+      <div class="c">ALUNO(A): _______________________________________________</div>
+      <div class="c">PROF.(ª): Mariana &nbsp;&nbsp;&nbsp; TURMA: 5º Ano ____</div>
+      <div class="c">JUNDIAÍ, _____ DE _________________________ DE 2026</div>
+    </div>
+  </div>
+
+  <header>
+    <h1>📚 Materiais da Pro Mariana</h1>
+    <p>EMEB Professor Flávio D'Angieri · Matemática · 5º Ano · 2026</p>
+  </header>
+
+  <main>
+    <a class="btn-voltar" href="#">← Voltar ao índice</a>
+
+    <div class="material-topo">
+      <div class="breadcrumb">Início › Listas › Guia de Estudos</div>
+      <h1 class="material-titulo">Guia de Estudos — Avaliação Trimestral de Matemática</h1>
+      <div class="meta-grid">
+        <div class="meta-item"><div class="rotulo">Trimestre</div><div class="valor">1º Trimestre · 2026</div></div>
+        <div class="meta-item"><div class="rotulo">Habilidades</div><div class="valor">EF05MA01, 03, 06, 07, 08, 14, 16, 19, 24</div></div>
+        <div class="meta-item"><div class="rotulo">Bloom</div><div class="valor">Lembrar → Compreender → Aplicar</div></div>
+        <div class="meta-item"><div class="rotulo">Questões</div><div class="valor">21 a 40 (20 questões)</div></div>
+      </div>
+    </div>
+
+    <div class="guia-intro">
+      <div class="emoji">🎯</div>
+      <div>
+        <h2>Como usar este guia</h2>
+        <p>Este guia cobre todos os temas da avaliação trimestral. Para cada tema você encontra uma <strong>explicação rápida</strong>, um <strong>exemplo resolvido</strong> e uma <strong>dica importante</strong>. Leia com calma e resolva os exemplos no caderno!</p>
+      </div>
+    </div>
+
+    <!-- TEMA 1 — SISTEMA DE NUMERAÇÃO -->
+    <div class="tema">
+      <div class="tema-header h-azul">
+        <span class="icone">🔢</span>
+        <h3>Sistema de Numeração Decimal</h3>
+        <span class="qs">Questões 24 e 26</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Ordens e algarismos</h4>
+          <p>Cada posição de um número tem um nome. Da direita para a esquerda:</p>
+          <div class="exemplo">
+            <strong>No número 57.432</strong>
+            <table class="tab" style="margin-top:8px">
+              <tr><th>C. Milhar</th><th>D. Milhar</th><th style="background:#fff3cd">U. Milhar</th><th>Centena</th><th>Dezena</th><th>Unidade</th></tr>
+              <tr><td>5</td><td>7</td><td><strong>4</strong></td><td>3</td><td>2</td><td>—</td></tr>
+            </table>
+            <p class="resposta">A 4ª ordem (unidade de milhar) é o algarismo <strong>4</strong>. ✓</p>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Composição e decomposição</h4>
+          <div class="formula">304.085 = 300.000 + 4.000 + 80 + 5</div>
+          <div class="dica"><span>💡</span><span>Preste atenção nos zeros! O <strong>0</strong> nas centenas significa que não há centenas. Não invente parcelas inexistentes.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 2 — FRAÇÕES E PORCENTAGEM -->
+    <div class="tema">
+      <div class="tema-header h-azul">
+        <span class="icone">½</span>
+        <h3>Frações e Porcentagem</h3>
+        <span class="qs">Questões 27 e 29</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Representando frações</h4>
+          <p>A fração <strong>1/4</strong> significa: dividimos em <strong>4 partes iguais</strong> e pegamos <strong>1</strong>.</p>
+          <div class="dica"><span>💡</span><span>As partes precisam ser <strong>iguais</strong>! Figura com partes diferentes não representa uma fração.</span></div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Porcentagem — as mais cobradas</h4>
+          <div class="exemplo">
+            <strong>Tabela de referência</strong>
+            <table class="tab" style="margin-top:8px">
+              <tr><th>%</th><th>Fração</th><th>Significado</th><th>De R$ 80,00</th></tr>
+              <tr><td>25%</td><td>1/4</td><td>um quarto</td><td>R$ 20,00</td></tr>
+              <tr><td><strong>50%</strong></td><td>1/2</td><td>metade</td><td><strong>R$ 40,00</strong></td></tr>
+              <tr><td>75%</td><td>3/4</td><td>três quartos</td><td>R$ 60,00</td></tr>
+              <tr><td>100%</td><td>1</td><td>inteiro</td><td>R$ 80,00</td></tr>
+            </table>
+            <p class="resposta">50% de R$ 80,00 = R$ 40,00 ✓ (letra b)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 3 — SISTEMA MONETÁRIO -->
+    <div class="tema">
+      <div class="tema-header h-azul">
+        <span class="icone">💰</span>
+        <h3>Sistema Monetário</h3>
+        <span class="qs">Questão 25</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Calculando com moedas</h4>
+          <p>Multiplique a quantidade de cada moeda pelo seu valor e some tudo.</p>
+          <div class="exemplo">
+            <strong>Questão 25</strong>
+            6 moedas de R$ 0,50 → 6 × 0,50 = R$ 3,00<br>
+            4 moedas de R$ 0,25 → 4 × 0,25 = R$ 1,00
+            <p class="resposta">Total: R$ 3,00 + R$ 1,00 = <strong>R$ 4,00</strong> ✓ (letra b)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 4 — OPERAÇÕES -->
+    <div class="tema">
+      <div class="tema-header h-laranja">
+        <span class="icone">➕</span>
+        <h3>Operações com Números Naturais</h3>
+        <span class="qs">Questões 31, 32, 33, 34 e 36</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Adição</h4>
+          <div class="exemplo">
+            <strong>Questão 31</strong>
+            2.458 + 1.290 + 354 = <span class="resposta" style="display:inline"><strong>4.102</strong> ✓ (letra a)</span>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Subtração</h4>
+          <div class="exemplo">
+            <strong>Questão 32</strong>
+            122.300 − 118.750 = <span class="resposta" style="display:inline"><strong>3.550</strong> ✓ (letra a)</span>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Multiplicação em situação-problema</h4>
+          <div class="exemplo">
+            <strong>Questão 33 — "por R$ X cada"</strong>
+            3 kg × R$ 5,00 = R$ 15,00<br>
+            2 kg × R$ 3,00 = R$ 6,00
+            <p class="resposta">Total: R$ 15,00 + R$ 6,00 = <strong>R$ 21,00</strong> ✓ (letra d)</p>
+          </div>
+          <div class="exemplo">
+            <strong>Questão 36 — Dobro, Triplo, Quádruplo</strong>
+            Dobro = ×2 &nbsp;|&nbsp; Triplo = ×3 &nbsp;|&nbsp; Quádruplo = ×4<br>
+            <p class="resposta">Triplo de 24 = 24 × 3 = <strong>72</strong> ✓ (letra c)</p>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Divisão</h4>
+          <div class="exemplo">
+            <strong>Questão 34 — "repartir igualmente"</strong>
+            744 ÷ 6 = <span class="resposta" style="display:inline"><strong>124 caixas</strong> ✓ (letra c)</span>
+          </div>
+          <div class="dica"><span>💡</span><span>Verifique: 124 × 6 = 744. Se bater, está certo!</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 5 — GEOMETRIA -->
+    <div class="tema">
+      <div class="tema-header h-verde">
+        <span class="icone">📐</span>
+        <h3>Geometria</h3>
+        <span class="qs">Questões 21, 22, 23 e 28</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Área em malha quadriculada</h4>
+          <div class="formula">Área = número de quadradinhos dentro da figura</div>
+          <div class="dica"><span>💡</span><span>Dois meios quadradinhos = 1 inteiro. Conte com cuidado!</span></div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Localização no mapa</h4>
+          <div class="dica"><span>💡</span><span>Conte os blocos pelos caminhos — não em diagonal. Use os quadradinhos como referência de distância.</span></div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Polígonos e ângulos internos</h4>
+          <p>O número de ângulos internos é igual ao número de lados.</p>
+          <div class="exemplo">
+            <strong>Relação lados × ângulos</strong>
+            Triângulo = 3 | Quadrado = 4 | Pentágono = 5 | Hexágono = 6
+            <p class="resposta">Mais lados = mais ângulos. ✓</p>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Planificação de sólidos</h4>
+          <div class="exemplo">
+            <strong>Pirâmide de base quadrada</strong>
+            1 base quadrada + 4 faces triangulares ao redor.
+            <p class="resposta">Na planificação: quadrado no centro, 4 triângulos em volta. ✓</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 6 — GRANDEZAS E MEDIDAS -->
+    <div class="tema">
+      <div class="tema-header h-amarelo">
+        <span class="icone">📏</span>
+        <h3>Grandezas e Medidas</h3>
+        <span class="qs">Questões 30, 37, 38 e 39</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Comprimento com régua</h4>
+          <div class="dica"><span>💡</span><span>Zero no início do objeto. Se terminar entre dois cm: leia as marcas menores = 0,5 cm.</span></div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Intervalo de tempo</h4>
+          <div class="exemplo">
+            <strong>Questão 37 — Subtrair horários</strong>
+            14:55 − 14:15 = <span class="resposta" style="display:inline"><strong>40 minutos</strong> ✓ (letra b)</span>
+          </div>
+          <div class="exemplo">
+            <strong>Questão 38 — Somar tempo</strong>
+            Saída às 13:20 + 2h15min = <span class="resposta" style="display:inline"><strong>15:35</strong> ✓ (letra b)</span>
+          </div>
+          <div class="dica"><span>💡</span><span>60 minutos = 1 hora. Se passar de 60, converta: 13:50 + 30min = 14:20 (não 13:80!).</span></div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Instrumentos de medida</h4>
+          <div class="exemplo">
+            <strong>Grandeza → instrumento → unidade</strong>
+            📏 Comprimento → régua → cm / m<br>
+            ⚖️ Massa → balança → g / kg<br>
+            🌡️ Temperatura → termômetro → °C<br>
+            🫙 Capacidade → jarra medidora → ml / l
+            <p class="resposta">Para medir leite: <strong>jarra medidora e litro</strong> ✓ (letra d)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMA 7 — TABELAS E GRÁFICOS -->
+    <div class="tema">
+      <div class="tema-header h-roxo">
+        <span class="icone">📊</span>
+        <h3>Tabelas e Gráficos</h3>
+        <span class="qs">Questões 35 e 40</span>
+      </div>
+      <div class="tema-body">
+        <div class="subtema">
+          <h4>📌 Leitura de tabela</h4>
+          <div class="exemplo">
+            <strong>Questão 35 — Mais pontos no Jogo 2</strong>
+            Beto: 25 | Ana: 18 | <strong>Caio: 32</strong> | Bia: 21
+            <p class="resposta">Caio fez mais pontos. ✓ (letra c)</p>
+          </div>
+        </div>
+        <div class="subtema">
+          <h4>📌 Leitura de gráfico</h4>
+          <div class="dica"><span>💡</span><span>Leia <strong>todas</strong> as alternativas antes de marcar. "Mais que todas as outras juntas" é diferente de "mais que cada uma".</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GABARITO -->
+    <div class="gabarito-box">
+      <h3>✅ Gabarito da Avaliação Trimestral</h3>
+      <div class="gab-grid">
+        <div class="gab-item">Q21<span>A — 24m²</span></div>
+        <div class="gab-item">Q22<span>B — Lúcia</span></div>
+        <div class="gab-item">Q23<span>hexágono</span></div>
+        <div class="gab-item">Q24<span>C — 4</span></div>
+        <div class="gab-item">Q25<span>B — R$4,00</span></div>
+        <div class="gab-item">Q26<span>B</span></div>
+        <div class="gab-item">Q27<span>ver fig.</span></div>
+        <div class="gab-item">Q28<span>ver fig.</span></div>
+        <div class="gab-item">Q29<span>B — R$40</span></div>
+        <div class="gab-item">Q30<span>B — 12,5cm</span></div>
+        <div class="gab-item">Q31<span>A — 4.102</span></div>
+        <div class="gab-item">Q32<span>A — 3.550</span></div>
+        <div class="gab-item">Q33<span>D — R$21</span></div>
+        <div class="gab-item">Q34<span>C — 124</span></div>
+        <div class="gab-item">Q35<span>C — Caio</span></div>
+        <div class="gab-item">Q36<span>C — 72</span></div>
+        <div class="gab-item">Q37<span>B — 40min</span></div>
+        <div class="gab-item">Q38<span>B — 15:35</span></div>
+        <div class="gab-item">Q39<span>D — litro</span></div>
+        <div class="gab-item">Q40<span>A — banana</span></div>
+      </div>
+    </div>
+
+    <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir guia</button>
+  </main>
+
+  <footer>
+    <p>EMEB Professor Flávio D'Angieri · Jundiaí, SP · 1º Trimestre 2026</p>
+  </footer>
+</body>
+</html>

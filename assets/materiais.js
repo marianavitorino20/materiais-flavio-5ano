@@ -20,6 +20,16 @@ const MATERIAIS = {
         "1º Trimestre"
       ],
       "desc": ""
+    },
+    {
+      "titulo": "Guia de Estudos — Avaliação Trimestral de Matemática",
+      "url": "materiais/listas/guia_estudos_avaliacao_trimestral_2026-04-26.html",
+      "data": "2026-04-26",
+      "tags": [
+        "1º Trimestre",
+        "Bloom: Lembrar → Aplicar"
+      ],
+      "desc": "7 temas: numeração, frações, operações, geometria, medidas e estatística"
     }
   ],
   "atividades": [],
