@@ -1,4 +1,3 @@
-// Catálogo — Assistente da Pro Mariana
 const MATERIAIS = {
   "provas": [
     {
@@ -12,6 +11,36 @@ const MATERIAIS = {
     }
   ],
   "listas": [
+    {
+      "titulo": "Lição de Casa — Adição e Subtração",
+      "url": "materiais/listas/licao_casa_adicao_subtracao_2026-04-30.html",
+      "data": "2026-04-30",
+      "tags": [
+        "1º Trimestre",
+        "EF05MA07"
+      ],
+      "desc": "5 questões: contas diretas e situações-problema de adição e subtração"
+    },
+    {
+      "titulo": "Lição de Casa — Multiplicação e Divisão",
+      "url": "materiais/listas/licao_casa_multiplicacao_divisao_2026-04-30.html",
+      "data": "2026-04-30",
+      "tags": [
+        "1º Trimestre",
+        "EF05MA08"
+      ],
+      "desc": "5 questões: contas diretas e situações-problema de multiplicação e divisão"
+    },
+    {
+      "titulo": "Lição de Casa — Sistema Monetário",
+      "url": "materiais/listas/licao_casa_sistema_monetario_2026-04-30.html",
+      "data": "2026-04-30",
+      "tags": [
+        "1º Trimestre",
+        "EF04MA25"
+      ],
+      "desc": "5 questões: troco, totais de compra e situações-problema com dinheiro"
+    },
     {
       "titulo": "Lista Exercicios Avaliacao Trimestral",
       "url": "materiais/listas/lista_exercicios_avaliacao_trimestral.html",

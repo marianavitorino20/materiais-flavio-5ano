@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lição de Casa — Multiplicação e Divisão</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; padding: 24px; }
+    .folha { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.10); overflow: hidden; }
+    .cabecalho-escola { background: linear-gradient(135deg, #1a4480, #2563a8); color: #fff; padding: 20px 28px 16px; display: flex; align-items: center; gap: 18px; }
+    .escola-icone { font-size: 2.8rem; line-height: 1; }
+    .escola-info h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: .3px; }
+    .escola-info p  { font-size: 0.82rem; opacity: .88; margin-top: 2px; }
+    .titulo-material { background: #ecfdf5; border-left: 5px solid #059669; padding: 14px 28px; display: flex; align-items: center; gap: 12px; }
+    .titulo-material .icone { font-size: 1.6rem; }
+    .titulo-material h2 { font-size: 1.15rem; color: #065f46; font-weight: 700; }
+    .titulo-material p  { font-size: 0.82rem; color: #4a5568; margin-top: 2px; }
+    .campos-aluno { padding: 18px 28px; background: #fafbfc; border-bottom: 1px solid #e2e8f0; }
+    .linha-campo { display: flex; gap: 24px; margin-bottom: 10px; flex-wrap: wrap; }
+    .campo { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: #374151; flex: 1; min-width: 200px; }
+    .campo label { font-weight: 600; white-space: nowrap; }
+    .campo .linha { flex: 1; border: none; border-bottom: 1.5px solid #9ca3af; height: 22px; background: transparent; }
+    .corpo { padding: 24px 28px 28px; }
+    .instrucao { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 10px 14px; font-size: 0.86rem; color: #78350f; margin-bottom: 22px; }
+    .instrucao strong { color: #92400e; }
+    .secao-titulo { background: #d1fae5; color: #065f46; font-size: 0.82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 12px; border-radius: 6px; margin: 22px 0 14px; }
+    .questao { margin-bottom: 26px; padding-bottom: 20px; border-bottom: 1px dashed #e2e8f0; }
+    .questao:last-child { border-bottom: none; margin-bottom: 0; }
+    .questao-num { display: inline-block; background: #059669; color: #fff; font-weight: 700; font-size: 0.78rem; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; margin-right: 8px; flex-shrink: 0; }
+    .questao-header { display: flex; align-items: flex-start; margin-bottom: 10px; }
+    .questao-texto { font-size: 0.95rem; line-height: 1.55; color: #1f2937; }
+    .conta-direta { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; font-weight: 600; color: #064e3b; margin: 6px 0 10px 32px; }
+    .conta-direta .resultado { border-bottom: 2px solid #059669; width: 120px; display: inline-block; }
+    .espaco-resposta { margin: 8px 0 0 32px; }
+    .espaco-resposta .linha-resposta { border-bottom: 1.5px solid #9ca3af; margin-bottom: 8px; height: 24px; width: 100%; }
+    .espaco-resposta .label-resp { font-size: 0.8rem; color: #6b7280; font-weight: 600; margin-bottom: 3px; }
+    .espaco-calculo { margin: 8px 0 8px 32px; border: 1px dashed #cbd5e0; border-radius: 6px; height: 60px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 0.75rem; }
+    .btn-imprimir { display: block; margin: 22px auto 0; background: #059669; color: #fff; border: none; padding: 10px 28px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
+    .btn-imprimir:hover { background: #047857; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .folha { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .btn-imprimir { display: none; }
+      .cabecalho-escola, .titulo-material, .secao-titulo, .questao-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="folha">
+  <div class="cabecalho-escola">
+    <div class="escola-icone">🏫</div>
+    <div class="escola-info">
+      <h1>EMEB Professor Flávio D'Angieri</h1>
+      <p>Professora Mariana · 5º Ano · Matemática · 2026</p>
+    </div>
+  </div>
+  <div class="titulo-material">
+    <div class="icone">✖️</div>
+    <div>
+      <h2>Lição de Casa — Multiplicação e Divisão</h2>
+      <p>Habilidade EF05MA08 · 1º Trimestre</p>
+    </div>
+  </div>
+  <div class="campos-aluno">
+    <div class="linha-campo">
+      <div class="campo"><label>Nome:</label><div class="linha"></div></div>
+    </div>
+    <div class="linha-campo">
+      <div class="campo" style="flex:0 0 auto; min-width:160px;"><label>Turma:</label><div class="linha" style="width:80px; flex:none;"></div></div>
+      <div class="campo"><label>Data: Jundiaí, ___ de ___________ de 2026</label></div>
+    </div>
+  </div>
+  <div class="corpo">
+    <div class="instrucao"><strong>📌 Orientação:</strong> Resolva cada questão com calma. Mostre a conta no espaço indicado e escreva a resposta completa.</div>
+
+    <div class="secao-titulo">✏️ Parte 1 — Cálculo direto</div>
+
+    <div class="questao">
+      <div class="questao-header"><span class="questao-num">1</span><span class="questao-texto">Calcule o produto:</span></div>
+      <div class="conta-direta">234 &nbsp;×&nbsp; 4 &nbsp;= &nbsp;<span class="resultado">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </div>
+
+    <div class="questao">
+      <div class="questao-header"><span class="questao-num">2</span><span class="questao-texto">Calcule o quociente:</span></div>
+      <div class="conta-direta">360 &nbsp;÷&nbsp; 9 &nbsp;= &nbsp;<span class="resultado">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </div>
+
+    <div class="secao-titulo">📖 Parte 2 — Situações-problema</div>
+
+    <div class="questao">
+      <div class="questao-header"><span class="questao-num">3</span><span class="questao-texto">Uma caixa tem <strong>12 ovos</strong>. O mercado recebeu <strong>15 caixas</strong>. Quantos ovos foram entregues ao todo?</span></div>
+      <div class="espaco-calculo">área para o cálculo</div>
+      <div class="espaco-resposta"><div class="label-resp">Resposta:</div><div class="linha-resposta"></div></div>
+    </div>
+
+    <div class="questao">
+      <div class="questao-header"><span class="questao-num">4</span><span class="questao-texto"><strong>180 balas</strong> foram divididas igualmente entre <strong>6 crianças</strong> em uma festa. Quantas balas cada criança recebeu?</span></div>
+      <div class="espaco-calculo">área para o cálculo</div>
+      <div class="espaco-resposta"><div class="label-resp">Resposta:</div><div class="linha-resposta"></div></div>
+    </div>
+
+    <div class="questao">
+      <div class="questao-header"><span class="questao-num">5</span><span class="questao-texto">A professora comprou <strong>8 pacotes</strong> de folha sulfite. Cada pacote tem <strong>500 folhas</strong>. Quantas folhas ela comprou ao todo?</span></div>
+      <div class="espaco-calculo">área para o cálculo</div>
+      <div class="espaco-resposta"><div class="label-resp">Resposta:</div><div class="linha-resposta"></div></div>
+    </div>
+
+  </div>
+  <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
+  <div style="height:20px;"></div>
+</div>
+</body>
+</html>
